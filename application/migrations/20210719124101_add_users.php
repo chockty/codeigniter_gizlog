@@ -2,11 +2,11 @@
 
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Migration_Add_blog extends CI_Migration {
+class Migration_Add_users extends CI_Migration {
 
         public function up()
         {
-                $this->dbforge->add_field(array(
+	        $this->dbforge->add_field(array(
                         'id' => array(
                                 'type' => 'INT',
                                 'unsigned' => TRUE,
@@ -14,44 +14,44 @@ class Migration_Add_blog extends CI_Migration {
                         ),
                         'name' => array(
                                 'type' => 'VARCHAR',
-                                'constraint' => '255',
+                                'constraint' => '255'
                         ),
                         'email' => array(
                                 'type' => 'VARCHAR',
-                                'constraint' => '255',
+                                'constraint' => '255'
                         ),
                         'avator' => array(
                                 'type' => 'VARCHAR',
                                 'constraint' => '255',
-				'null' => TRUE,
+				'null' => TRUE
                         ),
 			'password' => array(
 			        'type' => 'CHAR',
-				'constraint' => '100',
+				'constraint' => '100'
 			),
                         'remember_token' => array(
 				'type' => 'VARCHAR',
-				'constraint' => '255',
+				'constraint' => '255'
 			),
 			'created_at' => array(
                                 'type' => 'TIMESTAMP',
-                                'null' => TRUE,
+                                'null' => TRUE
                         ),
 			'updated_at' => array(
                                 'type' => 'TIMESTAMP',
-                                'null' => TRUE,
+                                'null' => TRUE
                         ),
-			'updated_at' => array(
+			'deleted_at' => array(
                                 'type' => 'TIMESTAMP',
-                                'null' => TRUE,
+                                'null' => TRUE
                         )
                 ));
-                $this->dbforge->add_key('blog_id', TRUE);
-                $this->dbforge->create_table('daily_report');
+                $this->dbforge->add_key('id', TRUE);
+                $this->dbforge->create_table('users');
         }
 
         public function down()
         {
-                $this->dbforge->drop_table('daily_report');
+                $this->dbforge->drop_table('users');
         }
 }

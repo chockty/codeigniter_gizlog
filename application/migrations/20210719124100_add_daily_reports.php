@@ -2,7 +2,7 @@
 
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Migration_Add_blog extends CI_Migration {
+class Migration_Add_daily_reports extends CI_Migration {
 
         public function up()
         {
@@ -14,37 +14,38 @@ class Migration_Add_blog extends CI_Migration {
                         ),
                         'user_id' => array(
                                 'type' => 'INT',
-                                'constraint' => '100',
+                                'constraint' => '100'
                         ),
                         'title' => array(
                                 'type' => 'VARCHAR',
-                                'constraint' => '255',
+                                'constraint' => '255'
                         ),
 			'content' => array(
-                                'type' => 'TEXT',
+                                'type' => 'TEXT'
                         ),
 			'reporting_time' => array(
-                                'type' => 'DATETIME',
+                                'type' => 'DATETIME'
                         ),
 			'created_at' => array(
                                 'type' => 'TIMESTAMP',
-                                'null' => TRUE,
+                                'null' => TRUE
                         ),
 			'updated_at' => array(
                                 'type' => 'TIMESTAMP',
-                                'null' => TRUE,
+                                'null' => TRUE
                         ),
-			'updated_at' => array(
+			'deleted_at' => array(
                                 'type' => 'TIMESTAMP',
-                                'null' => TRUE,
+                                'null' => TRUE
                         )
                 ));
-                $this->dbforge->add_key('blog_id', TRUE);
-                $this->dbforge->create_table('daily_report');
+                $this->dbforge->add_key('id', TRUE);
+                $this->dbforge->create_table('daily_reports');
         }
 
         public function down()
         {
-                $this->dbforge->drop_table('daily_report');
+		
+                $this->dbforge->drop_table('daily_reports');
         }
 }
