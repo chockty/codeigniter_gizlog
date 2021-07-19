@@ -2,11 +2,11 @@
 
 class Migrate extends CI_Controller
 {
-    public function __construct()
-		{
-			  parent::__construct();
-			  $this->load->library('migration');
-		}
+    // public function __construct()
+		// {
+		// 	  parent::__construct();
+
+		// }
 
     public function current()
     {
@@ -28,6 +28,7 @@ class Migrate extends CI_Controller
 
 		public function latest()
     {
+				$this->load->library('migration');
         if ($this->migration->latest()) {
 					  log_message('success', 'Migration Success.');
         } else {
