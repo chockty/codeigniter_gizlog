@@ -2,13 +2,13 @@
 
 class Migrate extends CI_Controller
 {
-    // public function __construct()
-		// {
-		// 	  parent::__construct();
+	function __construct()
+	{   
+			parent::__construct();
+			$this->load->library('migration');
+	}
 
-		// }
-
-    public function current()
+    function current()
     {
         if ($this->migration->current()) {
 					  log_message('success', 'Migration Success.');
@@ -17,7 +17,7 @@ class Migrate extends CI_Controller
 				}
     }
 
-		public function rollback($version)
+		function rollback($version)
     {
         if ($this->migration->version($version)) {
 					  log_message('success', 'Migration Success.');
@@ -26,9 +26,8 @@ class Migrate extends CI_Controller
 				}
     }
 
-		public function latest()
+		function latest()
     {
-				$this->load->library('migration');
         if ($this->migration->latest()) {
 					  log_message('success', 'Migration Success.');
         } else {
