@@ -39,7 +39,7 @@ class Migration_Add_blog extends CI_Migration {
                                 'null' => TRUE,
                         )
                 ));
-                $this->dbforge->add_key('id', TRUE);
+                $this->dbforge->add_key('blog_id', TRUE);
                 $this->dbforge->create_table('daily_report');
         }
 
