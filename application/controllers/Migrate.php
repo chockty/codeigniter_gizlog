@@ -26,9 +26,9 @@ class Migrate extends CI_Controller
 				}
     }
 
-		public function lastest()
+		public function latest()
     {
-        if ($this->migration->current()) {
+        if ($this->migration->latest()) {
 					  log_message('success', 'Migration Success.');
         } else {
 					  show_error($this->migration->error_string());
