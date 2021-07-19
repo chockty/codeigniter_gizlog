@@ -20,21 +20,21 @@ class Migration_Add_blog extends CI_Migration {
                                 'type' => 'VARCHAR',
                                 'constraint' => '255',
                         ),
-												'content' => array(
+			'content' => array(
                                 'type' => 'TEXT',
                         ),
-												'reporting_time' => array(
+			'reporting_time' => array(
                                 'type' => 'DATETIME',
                         ),
-												'created_at' => array(
+			'created_at' => array(
                                 'type' => 'TIMESTAMP',
                                 'null' => TRUE,
                         ),
-												'updated_at' => array(
+			'updated_at' => array(
                                 'type' => 'TIMESTAMP',
                                 'null' => TRUE,
                         ),
-												'updated_at' => array(
+			'updated_at' => array(
                                 'type' => 'TIMESTAMP',
                                 'null' => TRUE,
                         )

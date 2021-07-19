@@ -23,25 +23,25 @@ class Migration_Add_blog extends CI_Migration {
                         'avator' => array(
                                 'type' => 'VARCHAR',
                                 'constraint' => '255',
-																'null' => TRUE,
+				'null' => TRUE,
                         ),
-												'password' => array(
-												        'type' => 'CHAR',
-																'constraint' => '100',
-												),
+			'password' => array(
+			        'type' => 'CHAR',
+				'constraint' => '100',
+			),
                         'remember_token' => array(
-													      'type' => 'VARCHAR',
-													      'constraint' => '255',
-												),
-												'created_at' => array(
+				'type' => 'VARCHAR',
+				'constraint' => '255',
+			),
+			'created_at' => array(
                                 'type' => 'TIMESTAMP',
                                 'null' => TRUE,
                         ),
-												'updated_at' => array(
+			'updated_at' => array(
                                 'type' => 'TIMESTAMP',
                                 'null' => TRUE,
                         ),
-												'updated_at' => array(
+			'updated_at' => array(
                                 'type' => 'TIMESTAMP',
                                 'null' => TRUE,
                         )
