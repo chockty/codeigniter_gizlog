@@ -1,7 +1,7 @@
 <h2 class="brand-header">日報作成</h2>
 <div class="main-wrap">
   <div class="container">
-		<?php echo form_open('news/create'); ?>
+		<?php echo form_open('report/create'); ?>
       <div class="form-group form-size-small">
 				<input type="date" name="reporting_time" class="form-control" value="">
         <!-- {!! Form::date('reporting_time', date('Y-m-d'), ['class' => 'form-control']) !!} -->
