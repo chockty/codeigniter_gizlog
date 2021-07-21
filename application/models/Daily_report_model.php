@@ -22,8 +22,7 @@ class Daily_report_model extends CI_Model
 
 		public function get_daily_report($daily_report_id)
 		{
-				$query = $this->db->get_where('news', array('slug' => $daily_report_id));
-				return var_dump($query);
+				$query = $this->db->get_where('daily_reports', array('id' => $daily_report_id));
 				return $query->row_array();
 		}
 }
