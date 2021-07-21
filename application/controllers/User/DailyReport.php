@@ -45,7 +45,7 @@ class DailyReport extends CI_Controller {
 					// $this->load->view('user/index');
 				}
 		}
-
+		
 		public function check_input_date($date)
     {
         $today = date("Y/m/d");
@@ -56,4 +56,16 @@ class DailyReport extends CI_Controller {
         $this->form_validation->set_message('check_input_date', '今日以前の日付を選択してください。');
         return FALSE;
     }
+		
+		public function show($daily_report_id)
+		{
+				$data['news_item'] = $this->daily_report_model->get_daily_report($daily_report_id);
+
+				if (empty($data['news_item']))
+				{
+								show_404();
+				}
+
+				return 'test';
+		}
 }

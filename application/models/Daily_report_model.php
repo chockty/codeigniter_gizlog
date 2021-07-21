@@ -19,4 +19,11 @@ class Daily_report_model extends CI_Model
 
 				$this->db->insert('daily_reports', $this);
 		}
+
+		public function get_daily_report($daily_report_id)
+		{
+				$query = $this->db->get_where('news', array('slug' => $daily_report_id));
+				return var_dump($query);
+				return $query->row_array();
+		}
 }
