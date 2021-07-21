@@ -37,7 +37,7 @@ class DailyReport extends CI_Controller {
 
 				if ($this->form_validation->run() === FALSE) {
 					$this->load->view('common/user');
-					$this->load->view('user/create');
+					$this->load->view('user/daily_report/create');
 				} else {
 					$this->daily_report_model->insert_entry($this->input->post());
 					return 'success';
@@ -45,7 +45,7 @@ class DailyReport extends CI_Controller {
 					// $this->load->view('user/index');
 				}
 		}
-		
+
 		public function check_input_date($date)
     {
         $today = date("Y/m/d");
@@ -59,13 +59,17 @@ class DailyReport extends CI_Controller {
 		
 		public function show($daily_report_id)
 		{
-				$data['news_item'] = $this->daily_report_model->get_daily_report($daily_report_id);
+				$this->load->helper('date');
+				$this->load->helper('typography');
+				
+				$data['daily_report'] = $this->daily_report_model->get_daily_report($daily_report_id);
 
-				if (empty($data['news_item']))
+				if (empty($data))
 				{
-								show_404();
+						return show_404();
 				}
 
-				return 'test';
+				$this->load->view('common/user');
+				$this->load->view('user/daily_report/show', $data);
 		}
 }
