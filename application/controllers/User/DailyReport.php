@@ -40,7 +40,8 @@ class DailyReport extends CI_Controller {
 					$this->load->view('user/create');
 				} else {
 					$this->daily_report_model->insert_entry($this->input->post());
-					return 'test';
+					$this->load->view('common/user');
+					$this->load->view('user/index');
 				}
 		}
 }
