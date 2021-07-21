@@ -40,8 +40,20 @@ class DailyReport extends CI_Controller {
 					$this->load->view('user/create');
 				} else {
 					$this->daily_report_model->insert_entry($this->input->post());
-					$this->load->view('common/user');
-					$this->load->view('user/index');
+					return 'success';
+					// $this->load->view('common/user');
+					// $this->load->view('user/index');
 				}
 		}
+
+		public function check_input_date($date)
+    {
+        $today = date("Y/m/d");
+        if ($today < $date | isset($date)) {
+           return TRUE;
+        }
+
+        $this->form_validation->set_message('check_input_date', '今日以前の日付を選択してください。');
+        return FALSE;
+    }
 }
