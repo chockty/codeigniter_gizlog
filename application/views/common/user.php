@@ -8,11 +8,12 @@
     <!-- <meta name="csrf-token" content="{{ csrf_token() }}"> -->
     <!-- <title>{{ config('app.name', 'greenhorn_works') }}</title> -->
     <!-- Styles -->
-    <link href="<? echo base_url()?>assets/public/css/app.css" rel="stylesheet">
+    <base href="<?php echo base_url(); ?>">
+    <link href="assets/public/css/app.css" rel="stylesheet">
     <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
-    <link href="<? echo base_url()?>assets/public/css/navbar-fixed-left.min.css" rel="stylesheet">
-    <link href="<? echo base_url()?>assets/public/css/custom.css" rel="stylesheet">
-    <link href="<? echo base_url()?>assets/public/css/clock.css" rel="stylesheet">
+    <link href="assets/public/css/navbar-fixed-left.min.css" rel="stylesheet">
+    <link href="assets/public/css/custom.css" rel="stylesheet">
+    <link href="assets/public/css/clock.css" rel="stylesheet">
     <!-- Scripts -->
     <!-- <script>
         window.Laravel = {!! json_encode([
@@ -34,7 +35,7 @@
         </button>
         <!-- Branding Image -->
         <a class="navbar-brand" href="#">
-					テスト
+          テスト
         </a>
       </div>
 
@@ -54,7 +55,7 @@
               <li>
                 <!-- <a href="{{ route('logout') }}"
                     onclick="event.preventDefault();
-                             document.getElementById('logout-form').submit();">
+                            document.getElementById('logout-form').submit();">
                     Logout
                 </a> -->
                 <!-- <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">

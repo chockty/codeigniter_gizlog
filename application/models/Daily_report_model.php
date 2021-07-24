@@ -25,4 +25,18 @@ class Daily_report_model extends CI_Model
 				$query = $this->db->get_where('daily_reports', array('id' => $daily_report_id));
 				return $query->row_array();
 		}
+
+		public function update_entry($daily_report_id)
+		{
+				$today = date('Y-m-d H:i:s');
+
+				$data = array(
+						'reporting_time' => $_POST['reporting_time'],
+						'title' => $_POST['title'],
+						'content' => $_POST['content'],
+						'updated_at' => $today
+				);
+
+				$this->db->update('daily_reports', $data, ['id' => $daily_report_id]);
+		}
 }
