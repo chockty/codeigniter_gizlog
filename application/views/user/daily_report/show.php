@@ -2,7 +2,7 @@
 <div class="main-wrap">
   <div class="panel panel-success">
     <div class="panel-heading">
-			<? echo html_escape(nice_date($daily_report['reporting_time'], 'Y-m-d')) ?>&nbsp;の日報
+      <? echo html_escape(nice_date($daily_report['reporting_time'], 'Y-m-d')) ?>&nbsp;の日報
     </div>
     <div class="table-responsive">
       <table class="table table-striped table-bordered">
@@ -20,9 +20,9 @@
     </div>
   </div>
   <div class="btn-bottom-wrapper">
-    <a class="btn btn-edit" href="{{ route('report.edit', $dailyReport->id) }}"><i class="fa fa-pencil" aria-hidden="true"></i></a>
+    <a class="btn btn-edit" href="<? echo site_url('report/' . $daily_report['id'] . '/edit') ?>"><i class="fa fa-pencil" aria-hidden="true"></i></a>
     <div class="btn-delete">
-			<!-- 削除機能は後ほど -->
+      <!-- 削除機能は後ほど -->
       <!-- {!! Form::open(['route' => ['report.destroy', $dailyReport->id], 'method' => 'DELETE']) !!}
         {!! Form::button('<i class="fa fa-trash-o"></i>', ['type' => 'submit', 'class' => 'btn btn-danger']) !!}
       {!! Form::close() !!} -->
